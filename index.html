@@ -9,12 +9,28 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h2>Rock Paper Scissors </h2>
-    <button class="select-button" id="rock">Rock</button>
-    <button class="select-button" id="paper">Paper</button>
-    <button class="select-button" id="scissors">Scissors</button>
-
-    <p>selections: <span id="selections" ></span></p>
-    <p>Result: <span id="result" ></span></p>
+    <div class="container">
+        <div class="alt-container"> 
+            <h2>Rock Paper Scissors </h2>
+            <button class="select-button" id="rock">Rock</button>
+            <button class="select-button" id="paper">Paper</button>
+            <button class="select-button" id="scissors">Scissors</button>
+            
+            <p>selections: <span id="selections" ></span></p>
+            <p>Result: <span id="result" ></span></p>
+        </div>
+        <div class="alt-container">
+            <h2>Play 5 Quick Game with Computer</h2>
+            <button id="random">Play! </button>
+            <button id="clear-score">Clear the score</button>
+            <p>Round summary:</p>
+            <ul>
+                <li>User won: <span id="user-result"></span></li>
+                <li>Computer won: <span id="computer-result"></span></li>
+                <li>Draw: <span id="draw-result"></span></li>
+            </ul>
+            <p>Final score: <span id="final-result"></span></p>
+        </div>
+    </div>
 </body>
 </html>

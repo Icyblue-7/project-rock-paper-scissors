@@ -55,3 +55,71 @@ function game() {
 }
 
 // game function to compare results and declare winner
+
+
+// random game functions start
+
+const randomButton = document.getElementById('random');
+const clearButton = document.getElementById('clear-score');
+const finalResultDisplay = document.getElementById('final-result');
+const userResultDisplay = document.getElementById('user-result');
+const computerResultDisplay = document.getElementById('computer-result');
+const drawResultDisplay = document.getElementById('draw-result');
+
+
+function playRandom() {
+    let userScore = 0;
+    let computerScore = 0;
+    let drawScore = 0;
+    
+    for (let i = 0; i < 5; i++) {
+        userChoice = getRandomNumber();
+        computerChoice = getRandomNumber();
+        
+        switch (userChoice + computerChoice) {
+            case 'paperpapaer':
+            case 'scissorsscissors':
+            case 'rockrock':
+                drawScore++;
+                break;
+            case 'rockscissors':
+            case 'paperrock':
+            case 'scissorspaper':
+                userScore++;
+                break;
+            case 'rockpaper':
+            case 'scissorsrock':
+            case 'paperscissors':
+                computerScore++;
+                break;
+        }
+    }
+
+    userResultDisplay.textContent = userScore;
+    computerResultDisplay.textContent = computerScore;
+    drawResultDisplay.textContent = drawScore;
+
+    if (userScore > computerScore) {
+        finalResultDisplay.textContent = 'User won!';
+    } else if (userScore < computerScore) {
+        finalResultDisplay.textContent = 'Computer won!';
+    } else {
+        finalResultDisplay.textContent = 'It is draw'
+    }
+    
+
+    console.table(userScore, computerScore, drawScore)
+}
+
+function clearAll() {
+    userResultDisplay.textContent = ''
+    computerResultDisplay.textContent = ''
+    drawResultDisplay.textContent = ''
+    finalResultDisplay.textContent = ''
+    showResult.textContent = ''
+    showSelection.textContent = ''
+}
+
+
+clearButton.addEventListener('click', clearAll)
+randomButton.addEventListener('click', playRandom)
