@@ -106,9 +106,6 @@ function playRandom() {
     } else {
         finalResultDisplay.textContent = 'It is draw'
     }
-    
-
-    console.table(userScore, computerScore, drawScore)
 }
 
 function clearAll() {
